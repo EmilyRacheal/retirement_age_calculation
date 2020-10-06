@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement-Age</title>
+</head>
+<body>
+    
+    <!-- <h3> You are left with : <span id="retire">to retire</span> </h3> -->
+
+    <h3>your gender:<span id="displaygendi"></span></h3>
+    <h3>your birth age : <span id="birth"></span></h3>
+    <h3>your marital status : <span id="marriage"></span></h3>
+    <h3>your Retirement Status : <span id="retirementStatus"></span></h3>
+
+
+
+
+    <script type="text/javascript">
+        /*let lady = prompt("Enter Your Gender : \n1: Female : Married \n2: Female : Single \n3 Female : Divorced \n4 Male : Single \n5 Male :married \n6 Male : Divorced ");
+        let man = lady == 1 || lady == 2 || lady == 3 || lady == 4 || lady == 5 || lady == 6 ? parseInt(prompt("Enter Your Date Of Birth: \n1 : 1960 \n2: 1965 \n3: 1950 \n4: 1955")) : alert("please");
+        let date = 2020 - her
+        let herDate = 55 - date 
+        man == 1 ? 55 - herDate : man == 2 ? 65-herDate : man == 3 ? 65 - herDate : man == 4 ? 70 - herDate : "0" ;
+        document.getElementById("retire").innerHTML = man*/
+        
+        let gender = prompt("Enter Your Gender");
+        let case1 ='male';
+        let case2 = "female";
+
+        gender == '' ? alert("pls refresh and enter gender") :
+        gender == case1 ? document.getElementById('displaygendi').innerHTML = case1 :
+        gender == case2 ? document.getElementById('displaygendi').innerHTML = case2 :
+        alert("pls refresh and enter gender");
+
+        let birthYear = parseInt(prompt("Enter Your Birth Year"));
+        let birhtAge = 2020 - birthYear;
+        let age = 60 - birhtAge;
+        let age2 = 55 - birhtAge;
+        let age3 = 70 - birhtAge;
+        let age4 = 65 - birhtAge;
+        
+        birhtAge == '' ? alert("Kindly Please Enter Your Date of Birth"): 
+        (isNaN(birhtAge)) ? alert("kindly Enter A Valid Date") : 
+        document.getElementById("birth").innerHTML = birhtAge;
+
+        let status = prompt("Enter Your Marital Status!")
+        let marriage1 = 'married';
+        let marriage2 = 'single';
+        let marriage3 = 'divorced';
+
+        status == ' ' ? alert("Enter Your Marital Status!"):
+        status == marriage1 ? document.getElementById("marriage").innerHTML = marriage1 :
+        status == marriage2 ? document.getElementById("marriage").innerHTML = marriage2 :
+        status == marriage3 ? document.getElementById("marriage").innerHTML = marriage3 :
+        alert("pls refresh");
+
+        gender == case1 && age <= 59 && status == marriage1 ? document.getElementById("retirementStatus").innerHTML = "You Have" + age+ "To Retire" : 
+        gender == case1 && age >= 60 && status == marriage1 ? document.getElementById('retirementStatus').innerHTML = "you are " + birthAge + " and eligible for retirement":
+        gender == case1 && age <= 55 && status == marriage2 || status == marriage3 ? document.getElementById('retirementStatus').innerHTML = "you have " + age2 + " remaining for retirement" :   
+        gender == case1 && age >= 70 && status == marriage2 || status == marriage3 ? document.getElementById('retirementStatus').innerHTML = "you are " + birthAge + " and eligible for retirement":
+        
+        // for female
+        gender ==  case2  && age <= 54 && status == marriage1 ? document.getElementById('retirementStatus').innerHTML = "you have" + age3 + " remaining for retirement" :
+        gender ==  case2  && age >= 69 && status == marriage1 ? document.getElementById('retirementStatus').innerHTML = "you are " + birthAge + " and eligible for retirement":
+        gender ==  case2  && age <= 64 && status == marriage2 || status == marriage3 ? document.getElementById('retirementStatus').innerHTML = "you have " + age4+ " remaining for retirement" :
+        gender ==  case2  && age >= 65 && status == marriage2 || status == marriage3 ? document.getElementById('retirementStatus').innerHTML = "you are " + birthAge + " and eligible for retirement":
+        alert("talk to you later")
+
+
+        
+    </script>
+</body>
+</html>
